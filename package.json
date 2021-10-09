@@ -1,0 +1,16 @@
+{
+  "name": "wenjinghuan-cn",
+  "version": "1.0.0",
+  "description": "Personal site for Jinghuan Wen.",
+  "main": "index.js",
+  "repository": "https://github.com/wenjinghuan999/wenjinghuan-cn",
+  "author": "wenjinghuan999",
+  "license": "GPL-3.0-only",
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.26"
+  },
+  "scripts": {
+    "blog:dev": "vuepress dev blog",
+    "blog:build": "vuepress build blog"
+  }
+}
