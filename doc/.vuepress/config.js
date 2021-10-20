@@ -36,7 +36,7 @@ module.exports = config({
 
     author: "Jinghuan Wen",
     repo: "wenjinghuan999/wenjinghuan-cn",
-    docsDir: "docs",
+    docsDir: "doc",
 
     nav: [
       { text: "主页", link: "/", icon: "home" },
