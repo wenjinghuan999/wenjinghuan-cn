@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "target": "ES6",
+      "allowSyntheticDefaultImports": true,
+      "experimentalDecorators": true,
+      "module": "commonjs",
+      "types": ["@mr-hope/vuepress-theme-types"]
+    },
+    "include": [
+      "doc/.vuepress/enhanceApp.ts"
+    ]
+}
+  
