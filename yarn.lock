@@ -5421,6 +5421,16 @@ gray-matter@^4.0.1:
     section-matter "^1.0.0"
     strip-bom-string "^1.0.0"
 
+gray-matter@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/gray-matter/-/gray-matter-4.0.3.tgz#e893c064825de73ea1f5f7d88c7a9f7274288798"
+  integrity sha512-5v6yZd4JK3eMI3FqqCouswVqwugaA9r4dNZB1wwcmrD02QkV5H0y7XBQW8QwQqEaZY1pM9aqORSORhJRdNK44Q==
+  dependencies:
+    js-yaml "^3.13.1"
+    kind-of "^6.0.2"
+    section-matter "^1.0.0"
+    strip-bom-string "^1.0.0"
+
 handle-thing@^2.0.0:
   version "2.0.1"
   resolved "https://registry.npm.taobao.org/handle-thing/download/handle-thing-2.0.1.tgz#857f79ce359580c340d43081cc648970d0bb234e"
@@ -10206,8 +10216,8 @@ vuepress-theme-hope@^1.20.3:
 
 vuepress@^1.8.2:
   version "1.8.2"
-  resolved "https://registry.nlark.com/vuepress/download/vuepress-1.8.2.tgz#97e8bf979630611fc7b621fc4cc35b798ee5e847"
-  integrity sha1-l+i/l5YwYR/HtiH8TMNbeY7l6Ec=
+  resolved "https://registry.yarnpkg.com/vuepress/-/vuepress-1.8.2.tgz#97e8bf979630611fc7b621fc4cc35b798ee5e847"
+  integrity sha512-BU1lUDwsA3ghf7a9ga4dsf0iTc++Z/l7BR1kUagHWVBHw7HNRgRDfAZBDDQXhllMILVToIxaTifpne9mSi94OA==
   dependencies:
     "@vuepress/core" "1.8.2"
     "@vuepress/theme-default" "1.8.2"
