@@ -56,6 +56,7 @@ async function convert_one_file(filename, index) {
         } else {
             file.data['tag'] = [file.data['tag'], 'Notebook'];
         }
+        file.data['editLink'] = false;
         console.log(`[${index}] New matter: ${JSON.stringify(file.data)}`);
         fs.promises.writeFile(target_file, file.stringify());
     } catch (e) {
