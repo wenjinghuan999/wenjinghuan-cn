@@ -1,11 +1,10 @@
 const fs = require('fs');
 const path = require('path');
-const process = require('process');
 const child_process = require('child_process');
 const matter = require('gray-matter');
 
 const from_dir = 'notebook/';
-const to_dir = 'doc/notebook/';
+const to_dir = 'blog/notebook/';
 
 async function exec_worker(command, out_prefix) {
     return new Promise((resolve, reject) => {
@@ -56,7 +55,6 @@ async function convert_one_file(filename, index) {
         } else {
             file.data['tag'] = [file.data['tag'], 'Notebook'];
         }
-        file.data['editLink'] = false;
         console.log(`[${index}] New matter: ${JSON.stringify(file.data)}`);
         fs.promises.writeFile(target_file, file.stringify());
     } catch (e) {
@@ -67,7 +65,7 @@ async function convert_one_file(filename, index) {
     console.log(`[${index}] Done converting ${filename}.`);
 }
 
-async function main() {
+async function convert_notebooks() {
     try {
         const filenames = await fs.promises.readdir(from_dir);
         filenames.forEach((filename, index) => {
@@ -80,4 +78,4 @@ async function main() {
     }
 }
 
-main();
+module.exports = convert_notebooks;

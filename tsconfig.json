@@ -7,7 +7,7 @@
       "types": ["@mr-hope/vuepress-theme-types"]
     },
     "include": [
-      "doc/.vuepress/enhanceApp.ts"
+      "blog/.vuepress/enhanceApp.ts"
     ]
 }
   

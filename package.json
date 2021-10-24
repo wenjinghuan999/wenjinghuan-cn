@@ -4,12 +4,12 @@
   "description": "Personal site for Jinghuan Wen.",
   "license": "GPL-3.0-only",
   "scripts": {
-    "docs:build": "vuepress build doc",
-    "docs:clean-dev": "vuepress dev doc --no-cache",
-    "docs:dev": "vuepress dev doc",
-    "docs:eject-theme": "vuepress eject-hope doc",
-    "build": "bash build.sh && yarn docs:build",
-    "dev": "bash build.sh && yarn docs:dev"
+    "blog:build": "vuepress build blog",
+    "blog:clean-dev": "vuepress dev blog --no-cache",
+    "blog:dev": "vuepress dev blog",
+    "blog:eject-theme": "vuepress eject-hope blog",
+    "build": "node scripts/build.js && yarn blog:build",
+    "dev": "node scripts/build.js && yarn blog:dev"
   },
   "devDependencies": {
     "typescript": "^4.4.4",
@@ -17,6 +17,7 @@
     "vuepress-theme-hope": "^1.20.3"
   },
   "dependencies": {
-    "gray-matter": "^4.0.3"
+    "gray-matter": "^4.0.3",
+    "ncp": "^2.0.0"
   }
 }
