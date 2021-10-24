@@ -36,7 +36,7 @@ module.exports = config({
 
     author: "Jinghuan Wen",
     repo: "wenjinghuan999/wenjinghuan-cn",
-    docsDir: "doc",
+    docsDir: "blog",
 
     nav: [
       { text: "主页", link: "/", icon: "home" },
@@ -44,17 +44,17 @@ module.exports = config({
       {
         text: "C++",
         icon: "creative",
-        link: "/cpp/",
+        link: "/category/C++/",
       },
       {
         text: "图形学",
         icon: "creative",
-        link: "/graphics/",
+        link: "/category/图形学/",
       },
       {
         text: "数学",
         icon: "creative",
-        link: "/math/",
+        link: "/category/数学/",
       },
     ],
 
