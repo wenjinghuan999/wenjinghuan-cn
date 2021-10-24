@@ -3,6 +3,7 @@ category: 数学
 tag:
   - 概率
   - Notebook
+editLink: false
 ---
 
 # 概率趣题——吃豆子
@@ -896,3 +897,11 @@ $$
 $$
 P(n, n) = \frac{1}{2n+2}
 $$
+
+:::slot content-bottom
+<div class="page-meta">
+    <div class="edit-link">
+        <a href="https://github.com/wenjinghuan999/wenjinghuan-cn/blob/main/notebook/eat_beans.ipynb" target="_blank" rel="noopener noreferrer">查看原始Notebook</a>
+    </div>
+</div>
+:::

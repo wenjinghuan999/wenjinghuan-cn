@@ -5,6 +5,7 @@ const matter = require('gray-matter');
 
 const from_dir = 'notebook/';
 const to_dir = 'blog/notebook/';
+const source_dir = 'https://github.com/wenjinghuan999/wenjinghuan-cn/blob/main/notebook/';
 
 async function exec_worker(command, out_prefix) {
     return new Promise((resolve, reject) => {
@@ -55,7 +56,17 @@ async function convert_one_file(filename, index) {
         } else {
             file.data['tag'] = [file.data['tag'], 'Notebook'];
         }
+        file.data['editLink'] = false;
         console.log(`[${index}] New matter: ${JSON.stringify(file.data)}`);
+        file.content += `
+:::slot content-bottom
+<div class="page-meta">
+    <div class="edit-link">
+        <a href="${source_dir}${filename}" target="_blank" rel="noopener noreferrer">查看原始Notebook</a>
+    </div>
+</div>
+:::
+`
         fs.promises.writeFile(target_file, file.stringify());
     } catch (e) {
         console.error(`[${index}] ${e}`);
