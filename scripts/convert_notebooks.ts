@@ -5,7 +5,7 @@ import matter from 'gray-matter';
 
 const from_dir = 'notebook/';
 const to_dir = 'blog/notebook/';
-const source_dir = 'https://github.com/wenjinghuan999/wenjinghuan-cn/blob/main/notebook/';
+const source_dir = 'https://nbviewer.org/github/wenjinghuan999/wenjinghuan-cn/blob/main/notebook/';
 
 async function exec_worker(command: string, out_prefix: string) {
     return new Promise((resolve, reject) => {

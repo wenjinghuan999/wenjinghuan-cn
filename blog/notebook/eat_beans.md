@@ -81,7 +81,7 @@ print("P(1) =", simulate_and_calc_prob(1))
 ```
 
     P(1) = 0.25098
-
+    
 
 ## 更多的豆子
 
@@ -100,7 +100,7 @@ for n in [1, 2, 3, 4, 5, 10, 100]:
     P(5) = 0.08408
     P(10) = 0.04548
     P(100) = 0.005
-
+    
 
 ## 更快的程序？
 
@@ -159,7 +159,7 @@ for n in [1, 2, 3, 4, 5, 10, 100]:
     P(5) = 0.08278
     P(10) = 0.04681
     P(100) = 0.00507
-
+    
 
 ## 不再模拟
 
@@ -216,7 +216,7 @@ for n in [1, 2, 3, 4, 5, 10, 100]:
     P(5) = 0.08333333333333333
     P(10) = 0.04545454545454545
     P(100) = 0.004950495049504951
-
+    
 
 ## 画图
 
@@ -901,7 +901,7 @@ $$
 :::slot content-bottom
 <div class="page-meta">
     <div class="edit-link">
-        <a href="https://github.com/wenjinghuan999/wenjinghuan-cn/blob/main/notebook/eat_beans.ipynb" target="_blank" rel="noopener noreferrer">查看原始Notebook</a>
+        <a href="https://nbviewer.org/github/wenjinghuan999/wenjinghuan-cn/blob/main/notebook/eat_beans.ipynb" target="_blank" rel="noopener noreferrer">查看原始Notebook</a>
     </div>
 </div>
 :::
