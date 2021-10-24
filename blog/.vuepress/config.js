@@ -103,6 +103,7 @@ module.exports = config({
 
     git: {
       timezone: "Asia/Shanghai",
+      contributor: false
     },
 
     mdEnhance: {
