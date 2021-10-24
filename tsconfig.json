@@ -4,6 +4,8 @@
       "allowSyntheticDefaultImports": true,
       "experimentalDecorators": true,
       "module": "commonjs",
+      "resolveJsonModule": true,
+      "esModuleInterop": true,
       "types": ["@mr-hope/vuepress-theme-types"]
     },
     "include": [

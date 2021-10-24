@@ -1,13 +1,13 @@
-const fs = require('fs');
-const path = require('path');
-const child_process = require('child_process');
-const matter = require('gray-matter');
+import * as fs from 'fs';
+import * as path from 'path';
+import * as child_process from 'child_process';
+import matter from 'gray-matter';
 
 const from_dir = 'notebook/';
 const to_dir = 'blog/notebook/';
 const source_dir = 'https://github.com/wenjinghuan999/wenjinghuan-cn/blob/main/notebook/';
 
-async function exec_worker(command, out_prefix) {
+async function exec_worker(command: string, out_prefix: string) {
     return new Promise((resolve, reject) => {
         try {
             const proc = child_process.exec(command);
@@ -30,13 +30,13 @@ async function exec_worker(command, out_prefix) {
     });
 }
 
-async function convert_one_file(filename, index) {
+async function convert_one_file(filename: string, index: number) {
     const fullname = path.join(from_dir, filename);
     const command = `jupyter nbconvert ${fullname} --to markdown --output-dir ${to_dir}`;
     const target_file = path.join(to_dir, path.basename(filename, '.ipynb') + '.md');
 
     console.log(`[${index}] Converting "${filename}"...`);
-    console.log(`Command: ${command}`);
+    console.log(`[${index}] Command: ${command}`);
     try {
         const code = await exec_worker(command, `[${index}]`);
         console.log(`[${index}] Finished converting to "${target_file}". Returned ${code}.`);
@@ -67,7 +67,7 @@ async function convert_one_file(filename, index) {
 </div>
 :::
 `
-        fs.promises.writeFile(target_file, file.stringify());
+        fs.promises.writeFile(target_file, file.stringify(''));
     } catch (e) {
         console.error(`[${index}] ${e}`);
         return;
@@ -89,4 +89,4 @@ async function convert_notebooks() {
     }
 }
 
-module.exports = convert_notebooks;
+export { convert_notebooks }

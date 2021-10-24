@@ -3,13 +3,15 @@
   "version": "1.0.0",
   "description": "Personal site for Jinghuan Wen.",
   "license": "GPL-3.0-only",
+  "homepage": "wenjinghuan.cn",
   "scripts": {
     "blog:build": "vuepress build blog",
     "blog:clean-dev": "vuepress dev blog --no-cache",
     "blog:dev": "vuepress dev blog",
     "blog:eject-theme": "vuepress eject-hope blog",
-    "build": "node scripts/build.js && yarn blog:build",
-    "dev": "node scripts/build.js && yarn blog:dev"
+    "build": "ts-node scripts/build.ts && yarn blog:build",
+    "dev": "ts-node scripts/build.ts && yarn blog:dev",
+    "deploy": "ts-node scripts/build.ts && yarn blog:build && ts-node scripts/deploy.ts"
   },
   "devDependencies": {
     "typescript": "^4.4.4",
@@ -17,7 +19,12 @@
     "vuepress-theme-hope": "^1.20.3"
   },
   "dependencies": {
+    "@types/ncp": "^2.0.5",
+    "@types/node": "^16.11.4",
     "gray-matter": "^4.0.3",
-    "ncp": "^2.0.0"
+    "ncp": "^2.0.0",
+    "node-scp": "^0.0.15",
+    "ssh-config": "^4.1.0",
+    "ts-node": "^10.4.0"
   }
 }
