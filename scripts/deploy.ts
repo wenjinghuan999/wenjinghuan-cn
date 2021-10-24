@@ -53,7 +53,7 @@ async function getOptions(): Promise<IScpOptions> {
         }
         return options;
     } else {
-        throw ('SSH config does not exist! Create "~/.ssh/config" and add host "wenjinghuan.cn".');
+        throw ('SSH config does not exist! Create "~/.ssh/config" and add host "${hostname}".');
     }
 }
 
