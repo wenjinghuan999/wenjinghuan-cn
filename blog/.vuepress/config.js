@@ -67,11 +67,35 @@ module.exports = config({
     ],
 
     sidebar: {
+      "/math/two_child_problem/": [
+        {
+          title: "主页",
+          icon: "home",
+          path: "/",
+          children: [],
+        },
+        {
+          title: "数学",
+          icon: "creative",
+          path: "/category/数学/",
+          children: [
+            {
+              title: "两男孩问题",
+              collapsable: false,
+              prefix: "/math/two_child_problem/",
+              children: [
+                "two_child_problem",
+                "two_child_problem_2",
+              ],
+            },
+          ],
+        },
+      ],
       "/": [
-        "",
-        "cpp/",
-        "graphics/",
-        "math/",
+        ["/", "主页"],
+        ["/category/C++/", "C++"],
+        ["/category/图形学/", "图形学"],
+        ["/category/数学/", "数学"],
       ],
     },
 
