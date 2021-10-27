@@ -1,5 +1,5 @@
 ---
-icon: creative
+icon: note
 category: 数学
 tag:
   - 数学

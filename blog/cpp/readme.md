@@ -1,5 +1,5 @@
 ---
-icon: creative
+icon: code
 category: C++
 tag:
   - C++

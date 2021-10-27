@@ -1,5 +1,5 @@
 ---
-icon: creative
+icon: computer
 category: 图形学
 tag:
   - 图形学

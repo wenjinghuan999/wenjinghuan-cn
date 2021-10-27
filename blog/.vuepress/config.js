@@ -48,20 +48,20 @@ module.exports = config({
 
     nav: [
       { text: "主页", link: "/", icon: "home" },
-      { text: "文章列表", link: "/article/", icon: "home" },
+      { text: "文章列表", link: "/article/", icon: "list" },
       {
         text: "C++",
-        icon: "creative",
+        icon: "code",
         link: "/category/C++/",
       },
       {
         text: "图形学",
-        icon: "creative",
+        icon: "computer",
         link: "/category/图形学/",
       },
       {
         text: "数学",
-        icon: "creative",
+        icon: "note",
         link: "/category/数学/",
       },
     ],
@@ -76,11 +76,12 @@ module.exports = config({
         },
         {
           title: "数学",
-          icon: "creative",
+          icon: "note",
           path: "/category/数学/",
           children: [
             {
               title: "两男孩问题",
+              icon: "note",
               collapsable: false,
               prefix: "/math/two_child_problem/",
               children: [
