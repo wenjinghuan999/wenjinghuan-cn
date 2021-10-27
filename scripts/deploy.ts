@@ -24,37 +24,40 @@ async function findHost(): Promise<string> {
 async function getOptions(): Promise<IScpOptions> {
     const configFile = path.join(os.homedir(), '.ssh', 'config');
     const hostname = await findHost();
-    if (existsFile(configFile)) {
+    const options: IScpOptions = {};
+    options.host = hostname;
+
+    if (await existsFile(configFile)) {
         const configFileContent = await fs.promises.readFile(configFile);
         const config = SSHConfig.parse(configFileContent.toString());
         const section = config.find({ Host: hostname });
-        if (!section) {
-            throw (`Host "${hostname}" does not exist in "${configFile}".`);
-        }
-        let options: IScpOptions = {};
-        for (const line of section.config) {
-            switch (line.param) {
-            case 'HostName':
-                options.host = line.value;
-                break;
-            case 'Port':
-                options.port = line.value;
-                break;
-            case 'User':
-                options.username = line.value;
-                break;
-            case 'Password':
-                options.password = line.value;
-                break;
-            case 'IdentityFile':
-                options.privateKey = line.value;
-                break;
+        if (section) {
+            for (const line of section.config) {
+                switch (line.param) {
+                case 'HostName':
+                    options.host = line.value;
+                    break;
+                case 'Port':
+                    options.port = line.value;
+                    break;
+                case 'User':
+                    options.username = line.value;
+                    break;
+                case 'Password':
+                    options.password = line.value;
+                    break;
+                case 'IdentityFile':
+                    options.privateKey = line.value;
+                    break;
+                }
             }
+        } else {
+            console.log(`Host "${hostname}" does not exist in "${configFile}".`);
         }
-        return options;
     } else {
-        throw ('SSH config does not exist! Create "~/.ssh/config" and add host "${hostname}".');
+        console.log(`SSH config does not exist! Create "~/.ssh/config" and add host "${hostname}".`);
     }
+    return options;
 }
 
 async function connect(): Promise<ScpClient> {
