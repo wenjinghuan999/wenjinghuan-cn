@@ -87,6 +87,7 @@ module.exports = config({
               children: [
                 "two_child_problem",
                 "two_child_problem_2",
+                "two_child_problem_3",
               ],
             },
           ],
