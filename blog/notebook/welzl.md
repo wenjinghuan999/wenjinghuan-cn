@@ -8,6 +8,8 @@ editLink: false
 
 # 最小圆包含问题
 
+## 问题
+
 最近需要处理一个问题，即给定平面上的一些圆（下文称内部圆），寻找一个能够包含它们的最小圆（下文称所求圆）。
 
 稍作调研后，发现了一个算法：[Welzl 算法](https://en.wikipedia.org/wiki/Smallest-circle_problem)。这个算法是用来找包含给定点集的最小圆的，但是想象中应该也能用于本问题。
@@ -17,6 +19,7 @@ editLink: false
 类似于原 Welzl 算法，本问题的算法如下。
 
 > $\text{welzl}$ 算法为：
+>
 > - **输入**: 平面上的圆的集合 $P$ 和 $R$。
 > - **输出**: 包含 $P$ 和 $R$，且与 $R$ 中的圆相切的最小圆。
 >
@@ -32,6 +35,8 @@ editLink: false
 下面开始具体实现。
 
 ## 随机生成平面上的圆
+
+实现代码如下。
 
 
 ```python
@@ -145,8 +150,6 @@ $$
 
 相应的代码如下。
 
-## 
-
 
 ```python
 import math
@@ -239,19 +242,19 @@ draw_circles([center_random_three], alpha=0.1, color='r', edgecolor='r')
 
 
     
-![png](welzl_files/welzl_6_0.png)
+![png](welzl_files/welzl_5_0.png)
     
 
 
 
     
-![png](welzl_files/welzl_6_1.png)
+![png](welzl_files/welzl_5_1.png)
     
 
 
 
     
-![png](welzl_files/welzl_6_2.png)
+![png](welzl_files/welzl_5_2.png)
     
 
 
@@ -287,7 +290,7 @@ draw_circles([center], alpha=0.1, color='r', edgecolor='r')
 
 
     
-![png](welzl_files/welzl_8_0.png)
+![png](welzl_files/welzl_7_0.png)
     
 
 
