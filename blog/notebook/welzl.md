@@ -101,7 +101,7 @@ $$
 \end{aligned}
 $$
 
-求与三个圆相切的外接圆，设其圆心位于 $(x, y)$，半径为 $r$，则应有
+求与三个圆相切的外接圆（[Apollonius问题](https://en.wikipedia.org/wiki/Problem_of_Apollonius)），设其圆心位于 $(x, y)$，半径为 $r$，则应有
 $$
 \begin{aligned}
 (x - x_1)^2 + (y - y_1)^2 &= (r - r_1)^2 \\
