@@ -74,11 +74,11 @@ f_{XY}(x, y) = \left\{
 \end{aligned}
 \right.
 $$
-这看起来并不是一个非常简单的分布函数。我们不妨用极坐标表示为 $(\Rho, \Theta)$。（其中 $\Rho, \Theta$ 为随机变量，是 $\rho$ 和 $\theta$ 的大写。）这样有
+这看起来并不是一个非常简单的分布函数。我们不妨用极坐标表示为 $(R, \Theta)$。（其中 $R, \Theta$ 为随机变量，$\Theta$ 是 $\theta$ 的大写。）这样有
 $$
-g_{\Rho\Theta}(\rho, \theta) = \left\{
+g_{R\Theta}(r, \theta) = \left\{
 \begin{aligned}
-&\frac{\rho}{\pi}, & \rho < 1 \\
+&\frac{r}{\pi}, & r < 1 \\
 &0, & \text{otherwise}
 \end{aligned}
 \right.
@@ -87,78 +87,78 @@ $$
 
 这个分布函数是如何得到的呢？这就是多元微积分的知识了。实际上我们可以先验证一下这个分布函数是否正确，至少它应满足积分为$1$。
 $$
-\int_0^{2\pi}d\theta \int_0^1 g(\rho, \theta) d\rho = 1
+\int_0^{2\pi}d\theta \int_0^1 g(r, \theta) dr = 1
 $$
 确实没错。
 
 教材上会告诉我们，要对分布函数进行变换，需要计算 Jacobi 矩阵的行列式，然后可能会给出一堆证明，令人头秃。实际上，我们可以通过极坐标和笛卡尔坐标的微分转换关系，用一个比较形象的方法得到上述分布函数。
 
-<img src="./imgs/random_dist/cartesian_polar.png" width=400px />
+![Cartesian vs. Polar](./imgs/random_dist/cartesian_polar.png)
 
 在单位圆内取一个微小的区域 $d\Omega$。无论用何种坐标系，点落在这个微小区域内的概率应该是一样的，即
 $$
-p_{d\Omega} = P(x < X < x + dx, y < Y < y + dy) = P(\rho < \Rho < \rho + d\rho, \theta < \Theta < \theta + d\theta)
+p_{d\Omega} = P(x < X < x + dx, y < Y < y + dy) = P(r < R < r + dr, \theta < \Theta < \theta + d\theta)
 $$
 用分布函数的积分值表示上述点落在这个区域内的概率，即
 $$
-f(x, y)dxdy = g(\rho, \theta) d\rho d\theta
+f(x, y)dxdy = g(r, \theta) dr d\theta
 $$
 而根据微分的转换关系，有
 $$
-dxdy = \rho d\rho d\theta
+dxdy = r dr d\theta
 $$
-这可以由 Jacobi 矩阵的行列式得到，也可以用上图来看出。$dx dy$ 是用直角坐标系计算 $d\Omega$ 的面积，而 $\rho d\rho d\theta$ 是用极坐标系计算 $d\Omega$ 的面积，其中 $d\rho$ 是沿极坐标径向的长度，$\rho d\theta$ 是垂直于径向的弧长。注意这只是形象的解释，具体计算原则还是应该按照教科书上的推导。
+这可以由 Jacobi 矩阵的行列式得到，也可以用上图来看出。$dx dy$ 是用直角坐标系计算 $d\Omega$ 的面积，而 $r dr d\theta$ 是用极坐标系计算 $d\Omega$ 的面积，其中 $dr$ 是沿极坐标径向的长度，$r d\theta$ 是垂直于径向的弧长。注意这只是形象的解释，具体计算原则还是应该按照教科书上的推导。
 
 所以有
 $$
-g(\rho, \theta) = f(x, y) \rho = \frac{\rho}{\pi}, \quad 0 < \rho < 1
+g(r, \theta) = f(x, y) r = \frac{r}{\pi}, \quad 0 < r < 1
 $$
 
-那么可以看出 $\rho$ 和 $\theta$ 的分布函数相互独立，即
+那么可以看出 $r$ 和 $\theta$ 的分布函数相互独立，即
 $$
-g_{\Rho\Theta}(\rho, \theta) = h_{\Rho}(\rho)\cdot t_{\Theta}(\theta) = 2\rho \cdot \frac{1}{2\pi} 
+g_{R\Theta}(r, \theta) = h_{R}(r)\cdot t_{\Theta}(\theta) = 2r \cdot \frac{1}{2\pi} 
 $$
-我们只需要生成一个 $[0, 2\pi)$ 均匀分布的 $\theta$，和一个在 $[0, 1)$ 上、分布函数为 $h(\rho) = 2\rho$ 的 $\rho$ 即可。
+我们只需要生成一个 $[0, 2\pi)$ 均匀分布的 $\Theta$，和一个在 $[0, 1)$ 上、分布函数为 $h(r) = 2r$ 的 $R$ 即可。
 
-接下来问题就是如何生成分布函数为 $h(\rho) = 2\rho, \rho \in [0, 1)$ 的随机变量了。
+接下来问题就是如何生成分布函数为 $h(r) = 2r, r \in [0, 1)$ 的随机变量了。
 
 ## 生成服从某分布函数的随机变量
 
-考虑服从以下分布函数的随机变量 $\Rho$：
+考虑服从以下分布函数的随机变量 $R$：
 $$
-f_\Rho(\rho)=2\rho, \quad \rho \in [0, 1)
+f_R(r)=2r, \quad r \in [0, 1)
 $$
 我们在程序中可以直接随机生成的随机数 $Z$ 一般是服从 $U(0, 1)$ 的。即分布函数为
 $$
 f_Z(z) = 1, \quad z \in [0, 1)
 $$
 
-现在我们希望建立 $\Rho$、$Z$ 之间的函数关系，这样我们就可以通过一个变换，从随机生成的 $Z$ 得到 $\Rho$。这个函数关系我们还不知道。那么我们仍然可以用两个分布函数分别表示随机数落在某一微小区间 $d\Omega$ 内的概率：
+现在我们希望建立 $R$、$Z$ 之间的函数关系，这样我们就可以通过一个变换，从随机生成的 $Z$ 得到 $R$。这个函数关系我们还不知道。那么我们仍然可以用两个分布函数分别表示随机数落在某一微小区间 $d\Omega$ 内的概率：
 $$
-p_{d\Omega} = P(\rho < \Rho < \rho + d\rho) = P(z < Z < z + dz)
+p_{d\Omega} = P(r < R < r + dr) = P(z < Z < z + dz)
 $$
 用分布函数的微分表示：
 $$
-f_\Rho(\rho)d\rho = f_Z(z)dz
+f_R(r)dr = f_Z(z)dz
 $$
 那么
 $$
-\frac{dz}{d\rho} = \frac{f_\Rho(\rho)}{f_Z(z)} = 2\rho
+\frac{dz}{dr} = \frac{f_R(r)}{f_Z(z)} = 2r
 $$
-神奇了，我们得到了 $z$ 关于 $\rho$ 的导数。那么对其积分，可得
+神奇了，我们得到了 $z$ 关于 $r$ 的导数。那么对其积分，可得
 $$
-z = \rho^2 + C
+z = r^2 + C
 $$
-根据 $z$ 和 $\rho$ 的定义域，我们可以约定 $z=0$ 时 $\rho = 0$，那么 $C = 0$，于是
+根据 $z$ 和 $r$ 的定义域，我们可以约定 $z = 0$ 时 $r = 0$，那么 $C = 0$，于是
 $$
-z = \rho^2
+z = r^2
 $$
 即
 $$
-\rho = \sqrt{z}
+r = \sqrt{z}
 $$
 
-也就是说，我们生成一个 $Z \sim U(0, 1)$，然后求根号，就得到了服从分布函数 $f_\Rho$ 的 $\Rho$ 了。
+也就是说，我们生成一个 $Z \sim U(0, 1)$，然后求根号，就得到了服从分布函数 $f_R$ 的 $R$ 了。
 
 我们试试用这个方法生成单位圆内均匀分布的点。
 
@@ -168,9 +168,9 @@ import math
 
 def random_point_in_unit_circle() -> Point:
     while True:
-        rho = math.sqrt(random.random())
+        r = math.sqrt(random.random())
         theta = 2 * math.pi * random.random()
-        return rho * math.cos(theta), rho * math.sin(theta)
+        return r * math.cos(theta), r * math.sin(theta)
 
 points = [random_point_in_unit_circle() for _ in range(500)]
 draw_points(points)
@@ -183,7 +183,7 @@ draw_circle((0, 0), 1, alpha=0.2, edgecolor='b')
     
 
 
-也可以验证一下 $\rho$ 的分布是不是服从上述函数。
+也可以验证一下 $R$ 的分布是不是服从上述函数。
 
 
 ```python
@@ -192,8 +192,8 @@ def draw_density(x, nbins=20):
     cmap = matplotlib.cm.get_cmap()
     plt.hist(x, nbins, density=True, facecolor='w', edgecolor=cmap(0.25))
 
-rho = [math.sqrt(random.random()) for _ in range(2000)]
-draw_density(rho)
+r = [math.sqrt(random.random()) for _ in range(2000)]
+draw_density(r)
 # draw f(r) = 2r
 _ = plt.plot([0, 1], [0, 2])
 ```
