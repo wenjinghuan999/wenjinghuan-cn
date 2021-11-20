@@ -93,7 +93,7 @@ $$
 
 教材上会告诉我们，要对分布函数进行变换，需要计算 Jacobi 矩阵的行列式，然后可能会给出一堆证明，令人头秃。实际上，我们可以通过极坐标和笛卡尔坐标的微分转换关系，用一个比较形象的方法得到上述分布函数。
 
-![Cartesian vs. Polar](./imgs/random_dist/cartesian_polar.png)
+<img src="./imgs/random_dist/cartesian_polar.png" width="400px" />
 
 在单位圆内取一个微小的区域 $d\Omega$。无论用何种坐标系，点落在这个微小区域内的概率应该是一样的，即
 $$
