@@ -5,6 +5,8 @@ tag:
   - 概率
   - Notebook
 editLink: false
+notebookLink: >-
+  https://nbviewer.org/github/wenjinghuan999/wenjinghuan-cn/blob/main/notebook/eat_beans.ipynb
 ---
 
 # 概率趣题——吃豆子
@@ -262,7 +264,7 @@ plt.show()
 
 
     
-![png](eat_beans_files/eat_beans_12_0.png)
+![png](./eat_beans_files/eat_beans_12_0.png)
     
 
 
@@ -324,13 +326,13 @@ plt.show()
 
 
     
-![png](eat_beans_files/eat_beans_14_0.png)
+![png](./eat_beans_files/eat_beans_14_0.png)
     
 
 
 
     
-![png](eat_beans_files/eat_beans_14_1.png)
+![png](./eat_beans_files/eat_beans_14_1.png)
     
 
 
@@ -344,19 +346,7 @@ pd.DataFrame(np.array(p)[:-1,:-1])
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -900,11 +890,3 @@ $$
 $$
 P(n, n) = \frac{1}{2n+2}
 $$
-
-:::slot content-bottom
-<div class="page-meta">
-    <div class="edit-link">
-        <a href="https://nbviewer.org/github/wenjinghuan999/wenjinghuan-cn/blob/main/notebook/eat_beans.ipynb" target="_blank" rel="noopener noreferrer">查看原始Notebook</a>
-    </div>
-</div>
-:::

@@ -1,0 +1,36 @@
+html[data-theme=dark] {
+    .page {
+        .theme-hope-content {
+            img {
+                filter: invert(0.883)
+            }
+        }
+    }
+}
+
+.page {
+    .theme-hope-content {
+        blockquote {
+            padding: 0.5rem 1rem 0.5rem 1rem;
+            color: var(--text-color);
+            background-color: var(--grey14);
+        }
+    }
+}
+
+.blog-hero {
+    h1 {
+        text-shadow: 0.1em 0.1em 0.1em #303030
+    }
+    .description {
+        text-shadow: 0.1em 0.1em 0.1em #303030
+    }
+}
+
+html[data-theme=light] pre {
+    background: #f5f2f0;
+}
+
+html[data-theme=dark] pre {
+    background: #2d2d2d;
+}
