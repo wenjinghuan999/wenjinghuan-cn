@@ -26,3 +26,11 @@ html[data-theme=dark] {
         text-shadow: 0.1em 0.1em 0.1em #303030
     }
 }
+
+html[data-theme=light] pre {
+    background: #f5f2f0;
+}
+
+html[data-theme=dark] pre {
+    background: #2d2d2d;
+}
