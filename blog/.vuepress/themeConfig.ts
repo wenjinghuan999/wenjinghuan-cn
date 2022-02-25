@@ -50,10 +50,15 @@ export default defineThemeConfig({
       autoExcerpt: true,
     },
 
-    // comment: {
-    //   type: "waline",
-    //   serverURL: "https://vuepress-theme-hope-comment.vercel.app",
-    // },
+    comment: {
+      type: "waline",
+      serverURL: "https://waline.wenjinghuan.cn",
+      emoji: [
+        "https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq",
+        "https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili"
+      ],
+      copyright: false
+    },
 
     mdEnhance: {
       enableAll: true,
