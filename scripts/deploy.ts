@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as os from 'os';
 import * as path from 'path';
-import { Client, IScpOptions, ScpClient } from 'node-scp';
+import { Client, TScpOptions, ScpClient } from 'node-scp';
 import SSHConfig from 'ssh-config';
 import packageJson from '../package.json';
 
@@ -21,10 +21,10 @@ async function findHost(): Promise<string> {
     return packageJson.homepage;
 }
 
-async function getOptions(): Promise<IScpOptions> {
+async function getOptions(): Promise<TScpOptions> {
     const configFile = path.join(os.homedir(), '.ssh', 'config');
     const hostname = await findHost();
-    const options: IScpOptions = {};
+    const options: TScpOptions = {};
     options.host = hostname;
 
     if (await existsFile(configFile)) {
