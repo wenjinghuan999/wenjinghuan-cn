@@ -57,6 +57,7 @@ export default defineThemeConfig({
         "https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq",
         "https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili"
       ],
+      requiredMeta: ['nick', 'mail'],
       copyright: false
     },
 
@@ -68,8 +69,47 @@ export default defineThemeConfig({
     },
 
     pwa: {
+      manifest: {
+        name: "wenjinghuan.cn",
+        short_name: "wenjinghuan.cn",
+        description: "分享一些计算机相关冷知识和技巧",
+        lang: "zh-CN",
+        icons: [
+          {
+            src: "/assets/icon/logo512.png",
+            sizes: "512x512",
+            purpose: "maskable",
+            type: "image/png"
+          },
+          {
+            src: "/assets/icon/logo192.png",
+            sizes: "192x192",
+            purpose: "maskable",
+            type: "image/png"
+          },
+          {
+            src: "/assets/icon/logo512.png",
+            sizes: "512x512",
+            type: "image/png"
+          },
+          {
+            src: "/assets/icon/logo192.png",
+            sizes: "192x192",
+            type: "image/png"
+          },
+        ],
+      },
+      apple: {
+        icon: "/assets/icon/logo152.png",
+        statusBarColor: "black",
+      },
+      msTile: {
+        image: "/assets/icon/logo144.png",
+        color: "#ffffff",
+      },
       favicon: "/favicon.ico",
       cachePic: true,
+      maxPicSize: 8192,
     },
   },
 });
