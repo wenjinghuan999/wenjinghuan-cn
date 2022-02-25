@@ -5,3 +5,4 @@ dist/
 /.*/
 doc/notebook/
 .DS_Store
+*.log
