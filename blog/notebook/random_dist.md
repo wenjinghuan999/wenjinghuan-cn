@@ -4,6 +4,8 @@ tag:
   - 数学
   - Notebook
 editLink: false
+notebookLink: >-
+  https://nbviewer.org/github/wenjinghuan999/wenjinghuan-cn/blob/main/notebook/random_dist.ipynb
 ---
 
 # 生成任意分布的随机数
@@ -53,7 +55,7 @@ draw_circle((0, 0), 1, alpha=0.2, edgecolor='b')
 
 
     
-![png](random_dist_files/random_dist_3_0.png)
+![png](./random_dist_files/random_dist_3_0.png)
     
 
 
@@ -179,7 +181,7 @@ draw_circle((0, 0), 1, alpha=0.2, edgecolor='b')
 
 
     
-![png](random_dist_files/random_dist_7_0.png)
+![png](./random_dist_files/random_dist_7_0.png)
     
 
 
@@ -200,7 +202,7 @@ _ = plt.plot([0, 1], [0, 2])
 
 
     
-![png](random_dist_files/random_dist_9_0.png)
+![png](./random_dist_files/random_dist_9_0.png)
     
 
 
@@ -272,7 +274,7 @@ _ = plt.plot(t, y)
 
 
     
-![png](random_dist_files/random_dist_12_0.png)
+![png](./random_dist_files/random_dist_12_0.png)
     
 
 
@@ -301,11 +303,3 @@ $$
 r'(z) = \frac{1}{2r(z)}
 $$
 那么也许还能求解。但如果是像第二个例子中的复杂形式，大概就没法求解了吧。所以说，我们的方法利用了均匀分布的概率密度函数表达式为常数这一特殊性，简化了需要解决的问题。
-
-:::slot content-bottom
-<div class="page-meta">
-    <div class="edit-link">
-        <a href="https://nbviewer.org/github/wenjinghuan999/wenjinghuan-cn/blob/main/notebook/random_dist.ipynb" target="_blank" rel="noopener noreferrer">查看原始Notebook</a>
-    </div>
-</div>
-:::

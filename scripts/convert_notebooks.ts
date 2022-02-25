@@ -45,7 +45,7 @@ async function convert_one_file(filename: string, index: number) {
         return;
     }
 
-    console.log(`[${index}] Injecting front matter to "${target_file}"...`);
+    console.log(`[${index}] Injecting front matter and fix "${target_file}"...`);
     try {
         const file = matter(await fs.promises.readFile(target_file));
         console.log(`[${index}] Original matter: ${JSON.stringify(file.data)}`);
@@ -57,16 +57,13 @@ async function convert_one_file(filename: string, index: number) {
             file.data['tag'] = [file.data['tag'], 'Notebook'];
         }
         file.data['editLink'] = false;
+        file.data['notebookLink'] = `${source_dir}${filename}`;
         console.log(`[${index}] New matter: ${JSON.stringify(file.data)}`);
-        file.content += `
-:::slot content-bottom
-<div class="page-meta">
-    <div class="edit-link">
-        <a href="${source_dir}${filename}" target="_blank" rel="noopener noreferrer">查看原始Notebook</a>
-    </div>
-</div>
-:::
-`
+        file.content = file.content
+            .replace(/\!\[png\]\(/g, '![png](./')
+            .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+            .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '')
+
         fs.promises.writeFile(target_file, file.stringify(''));
     } catch (e) {
         console.error(`[${index}] ${e}`);

@@ -1,15 +1,10 @@
 {
     "compilerOptions": {
-      "target": "ES6",
+      "target": "es2021",
       "allowSyntheticDefaultImports": true,
       "experimentalDecorators": true,
       "module": "commonjs",
       "resolveJsonModule": true,
-      "esModuleInterop": true,
-      "types": ["@mr-hope/vuepress-theme-types"]
-    },
-    "include": [
-      "blog/.vuepress/enhanceApp.ts"
-    ]
+      "esModuleInterop": true
+    }
 }
-  

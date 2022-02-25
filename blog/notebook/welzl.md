@@ -4,6 +4,8 @@ tag:
   - 数学
   - Notebook
 editLink: false
+notebookLink: >-
+  https://nbviewer.org/github/wenjinghuan999/wenjinghuan-cn/blob/main/notebook/welzl.ipynb
 ---
 
 # 最小圆包含问题
@@ -82,7 +84,7 @@ draw_circles(generate_circles(10, (-1, 1), (0, 1)), alpha=0.2, color='r', edgeco
 
 
     
-![png](welzl_files/welzl_3_0.png)
+![png](./welzl_files/welzl_3_0.png)
     
 
 
@@ -242,19 +244,19 @@ draw_circles([center_random_three], alpha=0.1, color='r', edgecolor='r')
 
 
     
-![png](welzl_files/welzl_5_0.png)
+![png](./welzl_files/welzl_5_0.png)
     
 
 
 
     
-![png](welzl_files/welzl_5_1.png)
+![png](./welzl_files/welzl_5_1.png)
     
 
 
 
     
-![png](welzl_files/welzl_5_2.png)
+![png](./welzl_files/welzl_5_2.png)
     
 
 
@@ -290,14 +292,6 @@ draw_circles([center], alpha=0.1, color='r', edgecolor='r')
 
 
     
-![png](welzl_files/welzl_7_0.png)
+![png](./welzl_files/welzl_7_0.png)
     
 
-
-:::slot content-bottom
-<div class="page-meta">
-    <div class="edit-link">
-        <a href="https://nbviewer.org/github/wenjinghuan999/wenjinghuan-cn/blob/main/notebook/welzl.ipynb" target="_blank" rel="noopener noreferrer">查看原始Notebook</a>
-    </div>
-</div>
-:::
