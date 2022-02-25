@@ -25,7 +25,6 @@
     "node-scp": "^0.0.16",
     "ssh-config": "^4.1.1",
     "ts-node": "^10.5.0",
-    "typescript": "^4.5.5",
-    "vue-class-component": "^7.2.6"
+    "typescript": "^4.5.5"
   }
 }
