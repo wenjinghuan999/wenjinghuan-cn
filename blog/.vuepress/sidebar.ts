@@ -26,6 +26,30 @@ export default defineSidebarConfig({
       ],
     },
   ],
+  "/graphics/wengine/": [
+    {
+      text: "主页",
+      icon: "home",
+      link: "/",
+    },
+    {
+      text: "图形学",
+      icon: "computer",
+      link: "/category/图形学/",
+      children: [
+        {
+          text: "从零开始搭建游戏引擎",
+          icon: "computer",
+          collapsable: false,
+          link: "/graphics/wengine/",
+          prefix: "/graphics/wengine/",
+          children: [
+            { text: "介绍", link: "intro" },
+          ],
+        },
+      ],
+    },
+  ],
   "/": [
     { text: "主页", link: "/" },
     { text: "C++", link: "/category/C++/", icon: "code" },
