@@ -3,13 +3,12 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/node:current
-      - image: cimg/python:3.11.5
+      - image: cimg/python:3.11.3-node
     steps:
       - checkout
       - run:
           name: install jupyterlab
-          command: pip install jupyterlab
+          command: python -m pip install jupyterlab
       - run:
           name: test jupyterlab installation
           command: jupyter nbconvert --version
