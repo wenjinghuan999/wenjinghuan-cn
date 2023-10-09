@@ -32,7 +32,7 @@ async function exec_worker(command: string, out_prefix: string) {
 
 async function convert_one_file(filename: string, index: number) {
     const fullname = path.join(from_dir, filename);
-    const command = `jupyter nbconvert ${fullname} --to markdown --output-dir ${to_dir}`;
+    const command = `python -m jupyter nbconvert ${fullname} --to markdown --output-dir ${to_dir}`;
     const target_file = path.join(to_dir, path.basename(filename, '.ipynb') + '.md');
 
     console.log(`[${index}] Converting "${filename}"...`);
