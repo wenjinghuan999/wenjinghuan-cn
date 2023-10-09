@@ -11,7 +11,7 @@ jobs:
           command: python -m pip install jupyterlab
       - run:
           name: test jupyterlab installation
-          command: jupyter nbconvert --version
+          command: python -m jupyter nbconvert --version
       - run:
           name: install yarn dependencies
           command: yarn install
